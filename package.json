@@ -1,0 +1,17 @@
+{
+    "name": "real-sns-udemy",
+    "version": "1.0.0",
+    "description": "real-sns",
+    "main": "server.js",
+    "scripts": {
+        "dev": "nodemon server.js"
+    },
+    "author": "Kazuyki-Watanabe",
+    "license": "ISC",
+    "dependencies": {
+        "express": "^5.1.0",
+        "helmet": "^8.1.0",
+        "mongoose": "^8.15.0",
+        "nodemon": "^3.1.10"
+    }
+}
