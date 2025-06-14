@@ -4,6 +4,18 @@ const userRoute = require('./routes/users');
 const authRoute = require('./routes/auth');
 const postRoute = require('./routes/posts');
 const PORT = 3000;
+const mongoose = require('mongoose');
+require('dotenv').config();
+
+// Connect to MongoDB
+mongoose
+    .connect(process.env.MONGOURL)
+    .then(() => {
+        console.log('Connected to MongoDB');
+    })
+    .catch((err) => {
+        console.error('MongoDB connection error:', err);
+    });
 
 // Middleware
 app.use('/api/users', userRoute);
