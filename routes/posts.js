@@ -54,4 +54,31 @@ router.get('/:id', async (req, res) => {
     }
 });
 
+// like a post
+router.put('/:id/like', async (req, res) => {
+    try {
+        const post = await Post.findById(req.params.id);
+
+        // Check if the user has already liked the post
+        if (!post.likes.includes(req.body.userId)) {
+            await post.updateOne({
+                $push: {
+                    likes: req.body.userId,
+                },
+            });
+            return res.status(200).json('Post liked successfully');
+        } else {
+            // If the user has already liked the post, remove the like
+            await post.updateOne({
+                $pull: {
+                    likes: req.body.userId,
+                },
+            });
+            return res.status(200).json('Post unliked successfully');
+        }
+    } catch (err) {
+        return res.status(500).json(err);
+    }
+});
+
 module.exports = router;
