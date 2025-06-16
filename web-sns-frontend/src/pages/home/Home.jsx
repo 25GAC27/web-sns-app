@@ -1,5 +1,10 @@
 import React from 'react';
+import Topbar from '../../components/topbar/Topbar';
 
-export default function home() {
-    return <div>home</div>;
+export default function Home() {
+    return (
+        <>
+            <Topbar />
+        </>
+    );
 }
