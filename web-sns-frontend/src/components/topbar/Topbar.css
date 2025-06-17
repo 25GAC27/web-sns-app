@@ -1,0 +1,26 @@
+.topbarContainer {
+    background-color: #2c517c;
+    height: 48px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.topbarLeft {
+    flex: 3;
+}
+
+.logo {
+    font-size: 24px;
+}
+
+.topbarCenter {
+    flex: 5;
+}
+
+.topbarRight {
+    flex: 4;
+}
